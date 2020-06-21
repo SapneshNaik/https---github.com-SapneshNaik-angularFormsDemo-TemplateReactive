@@ -1,0 +1,39 @@
+<div class="container">
+    <div>
+        <h1>Reactive Form Example:</h1>
+    </div>
+
+    <form [formGroup]="reactiveForm" (ngSubmit)="onSubmitReactiveForm()">
+        <div class="form-group">
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" required formControlName="name">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" required formControlName="address">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="number" class="form-control" required formControlName="mobileNumber">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" required formControlName="email">
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="foodPreference">Food Preference:</label>
+            <select class="form-control" id="foodPreference" required formControlName="foodPreference">
+                <option *ngFor="let i of myPreferences" [value]="i">{{i}}</option>
+            </select>
+        </div>
+        <p>
+            <button class="btn btn-lg btn-primary" type="submit" [disabled]="!reactiveForm.valid">Submit</button>
+        </p>

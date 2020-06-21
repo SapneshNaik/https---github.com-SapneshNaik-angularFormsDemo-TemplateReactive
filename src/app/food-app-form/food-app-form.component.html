@@ -1,0 +1,44 @@
+<div class="container">
+    <div>
+        <h1>Template-driven Form Example:</h1>
+    </div>
+
+    <form #foodForm="ngForm" (ngSubmit)="onSubmitTemplateForm()">
+        <div class="form-group">
+            <!-- To remove -->
+            {{ dataModel }}
+            <!-- To remove -->
+            <p>
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" required [(ngModel)]="model.name" name="name">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="address">Address:</label>
+                <input type="text" class="form-control" id="address" required [(ngModel)]="model.address"
+                    name="address">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="mobileNumber">Mobile Number:</label>
+                <input type="number" class="form-control" required [(ngModel)]="model.mobileNumber" name="mobileNumber">
+            </p>
+        </div>
+        <div class="form-group">
+            <p>
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" required [(ngModel)]="model.email" name="email">
+            </p>
+        </div>
+        <div class="form-group">
+            <label for="foodPreference">Food Preference:</label>
+            <select class="form-control" id="foodPreference" required [(ngModel)]="model.foodPreference"
+                name="foodPreference" name="foodPreference">
+                <option *ngFor="let i of myPreferences" [value]="i">{{i}}</option>
+            </select>
+        </div>
+        <p>
+            <button class="btn btn-lg btn-primary" type="submit" [disabled]="!foodForm.valid">Submit</button>
+        </p>
