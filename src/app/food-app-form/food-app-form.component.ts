@@ -5,21 +5,25 @@ import { mainModule } from 'process';
 @Component({
   selector: 'app-food-app-form',
   templateUrl: './food-app-form.component.html',
-  styleUrls: ['./food-app-form.component.scss']
+  styleUrls: ['./food-app-form.component.scss'],
 })
 export class FoodAppFormComponent implements OnInit {
-  myPreferences = [
-    'Italian', 'Indian', 'Continental'
-  ];
-  model = new FoodApp('John', 'Queens street London', 18007399, 'john@mainModule.com', this.myPreferences[0]);
+  myPreferences = ['Italian', 'Indian', 'Continental'];
+  model = new FoodApp(
+    'John',
+    'Queens street London',
+    18007399,
+    'john@mainModule.com',
+    this.myPreferences[0]
+  );
   submitted = false;
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
   onSubmitTemplateForm() {
     this.submitted = true;
     alert('your form is submitted');
   }
   // TO remove
-  get dataModel() { return JSON.stringify(this.model); }
+  get dataModel() {
+    return JSON.stringify(this.model);
+  }
 }
-

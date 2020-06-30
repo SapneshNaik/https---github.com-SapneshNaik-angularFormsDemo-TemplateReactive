@@ -5,18 +5,22 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 const routes: Routes = [
   {
-    path: '', redirectTo: '/foodAppForm', pathMatch: 'full'
+    path: '',
+    redirectTo: '/foodAppForm',
+    pathMatch: 'full',
   },
   {
-    path: 'foodAppForm', component: FoodAppFormComponent
+    path: 'foodAppForm',
+    component: FoodAppFormComponent,
   },
   {
-    path: 'reactiveForm', component: ReactiveFormComponent
-  }
+    path: 'reactiveForm',
+    component: ReactiveFormComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
