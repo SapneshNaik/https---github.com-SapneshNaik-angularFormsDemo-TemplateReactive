@@ -8,9 +8,8 @@ describe('FoodAppFormComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FoodAppFormComponent ]
-    })
-    .compileComponents();
+      declarations: [FoodAppFormComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
